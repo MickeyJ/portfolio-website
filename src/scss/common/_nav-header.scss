@@ -1,0 +1,42 @@
+
+#nav{
+  @extend %pad-vert;
+
+  a{
+    font-size: 1.3em;
+    font-weight: 200;
+    text-decoration: none;
+    color: $app-blue-2;
+    @extend %marg-lat;
+    @include transition(all 0.1s);
+
+    &:hover{
+      color: #104d8d;
+      text-decoration: none;
+    }
+
+  }
+
+  .active-link{
+    color: $app-red;
+    text-decoration: none;
+  }
+
+}
+
+#banner-logo{
+  width: 100%;
+  font-size: 3em;
+  background: $app-blue;
+  color: white;
+  @include transition( background 0.05s );
+  @include dead-center-text(100px);
+  @include banner-shadow(12px, 11px, $app-shadow);
+
+  cursor: default;
+  user-select: none;
+  &::selection{
+    background-color: transparent;
+  }
+
+}
