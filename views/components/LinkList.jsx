@@ -58,12 +58,17 @@ const LinkList = (props) =>(
         title="Express-React-Views"
         github_url="https://github.com/MickeyJ/express-react-view-seed"
         demo_url="https://react-express-demo.herokuapp.com"
-        info="Express server with React-Express-Views engine"
+        info="Express server with Express-React-Views engine"
       />
       <ListItem
         title="NodeJS-Todos"
         github_url="https://github.com/MickeyJ/node-pubsub-todos"
         info="command line todo app, pub-sub style"
+      />
+      <ListItem
+        title="The Code for this Site"
+        github_url="https://github.com/MickeyJ/portfolio-website"
+        info="Made using the Express-React seed project above"
       />
     </ul>
   </div>

@@ -19,7 +19,7 @@ const SkillsList = (props) =>(
     <ul className="nice-list">
       <ListItem
         type="Basic Web Development"
-        info={['Html - Css', 'Javascript - jQuery', 'Markdown']}
+        info={['Html - Css', 'Javascript - jQuery']}
       />
       <ListItem
         type="Css"
@@ -27,7 +27,7 @@ const SkillsList = (props) =>(
       />
       <ListItem
         type="Node Js"
-        info={['Express, Handlebars, Ejs, React-Express-Views']}
+        info={['Express, Handlebars, Ejs, Express-React-Views']}
       />
       <ListItem
         type="Frameworks - Libraries"
