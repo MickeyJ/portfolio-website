@@ -1,36 +1,68 @@
-.link-list-box{
-  @extend %center;
+
+@media only screen and (min-width: 992px){
+  #link-list-box{
+    height: 80vh;
+    overflow: auto;
+    border-right: 1px solid #ccc;
+  }
 }
 
 
 .nice-list{
-  margin: 0;
   padding: 0;
 
   li{
+    @extend %pad-vert;
     list-style: none;
-    border-right: 1px solid #ccc;
 
     &:not(:last-child) {
       border-bottom: 1px solid #ccc;
     }
 
-
     .github-link{
       font-size: 1.5em;
       font-weight: 200;
+      color: ForestGreen;
+      @include transition(all 0.1s);
+
+      &:hover{
+        text-decoration: none;
+        border-bottom: 1px solid #ccc;
+
+      }
+    }
+
+    p{
+      margin-left: 2%;
+      font-size: 1.2em;
+      font-weight: 300;
+
+      &:before{
+        content: ' • '
+      }
     }
 
     .title{
-      border-bottom: 1px solid #ccc;
-      font-size: 1.5em;
-      font-weight: 400;
+      margin-bottom: 1%;
+
+      .title-text{
+        border-bottom: 1px solid #ccc;
+        font-size: 1.5em;
+        font-weight: 300;
+      }
     }
 
     .demo-link{
+      display: inline;
       font-size: 1.2em;
       font-weight: 300;
-      color: $app-green;
+      color: Coral;
+
+      &:hover{
+        text-decoration: none;
+        border-bottom: 1px solid #ccc;
+
+      }
     }
   }
 

@@ -3,8 +3,8 @@ import React from 'react'
 const ContactInfo = (props) =>(
   <div className="contact-box">
     <h2>Contact Info</h2>
-    <div className="col-md-5" >
-      <table className="table table-bordered">
+    <div className="col-md-5 col-xs-12" >
+      <table id="contact-table" className="table">
         <tbody>
         <tr>
           <th>Email</th>
@@ -18,7 +18,7 @@ const ContactInfo = (props) =>(
           <th>Facebook</th>
           <td>
             <a href="https://www.facebook.com/Mickey4D" target="_blank">
-              https://www.facebook.com/Mickey4D
+              facebook.com/Mickey4D
             </a>
           </td>
         </tr>
@@ -26,7 +26,7 @@ const ContactInfo = (props) =>(
           <th>GitHub</th>
           <td>
             <a href="https://github.com/MickeyJ" target="_blank">
-              https://github.com/MickeyJ
+              github.com/MickeyJ
             </a>
           </td>
         </tr>
@@ -34,7 +34,7 @@ const ContactInfo = (props) =>(
           <th>LinkedIn</th>
           <td>
             <a href="https://www.linkedin.com/in/michael-malotte" target="_blank">
-              https://www.linkedin.com/in/michael-malotte
+              linkedin.com/in/michael-malotte
             </a>
           </td>
         </tr>

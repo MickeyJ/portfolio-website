@@ -4,15 +4,17 @@ const ListItem = (props) =>{
   if(props.demo_url){
     return(
       <li>
-        <a className="github-link" href={props.github_url} target="_blank">
-          {props.title}
-        </a>
-        <p> - {props.info}</p>
-        <p>
+        <div className="title">
+          <a className="github-link" href={props.github_url} target="_blank">
+            {props.title}
+          </a>
+          <span> — </span>
           <a className="demo-link" href={props.demo_url} target="_blank">
             Live Demo
           </a>
-        </p>
+        </div>
+        
+        <p>{props.info}</p>
       </li>
     )
   } else {
@@ -21,14 +23,14 @@ const ListItem = (props) =>{
         <a className="github-link" href={props.github_url} target="_blank">
           {props.title}
         </a>
-        <p> - {props.info}</p>
+        <p>{props.info}</p>
       </li>
     )
   }
 };
 
 const LinkList = (props) =>(
-  <div className="col-md-5">
+  <div id="link-list-box" className="col-md-5">
     <h2>Awesome GitHub Stuff</h2>
     <ul className="nice-list">
       <ListItem
@@ -46,29 +48,29 @@ const LinkList = (props) =>(
         title="React-Redux-Webpack"
         github_url="https://github.com/MickeyJ/react-redux-crud"
         demo_url="https://comments-redux.herokuapp.com"
-        info="using React, Redux, Webpack, Express, Postgres"
+        info="React, Redux, Webpack, Express, Postgres"
       />
       <ListItem
         title="Angular-JWT"
         github_url="https://github.com/MickeyJ/reddit-clone-angular-jwt"
         demo_url="https://mickey-reddit-clone.herokuapp.com"
-        info="using Angular, Webpack, JWT, Express, Postgres"
+        info="Angular, Webpack, JWT, Express, Postgres"
       />
       <ListItem
         title="Express-React-Views"
         github_url="https://github.com/MickeyJ/express-react-view-seed"
         demo_url="https://react-express-demo.herokuapp.com"
-        info="Express server with Express-React-Views engine"
+        info="Express, Express-React-Views engine, Gulp"
       />
       <ListItem
         title="NodeJS-Todos"
         github_url="https://github.com/MickeyJ/node-pubsub-todos"
-        info="command line todo app, pub-sub style"
+        info="Command line todo app, pub-sub style"
       />
       <ListItem
         title="The Code for this Site"
         github_url="https://github.com/MickeyJ/portfolio-website"
-        info="Made using the Express-React seed project above"
+        info="Using the Express-React seed project above"
       />
     </ul>
   </div>

@@ -8,12 +8,14 @@ var gulp       = require('gulp'),
     uglify     = require('gulp-uglify'),
     sass       = require('gulp-sass');
 
+
 gulp.task('start',() =>{
   nodemon({
     script: './bin/www',
     env: { 'NODE_ENV': 'development' }
   })
 });
+
 
 gulp.task('script',() =>{
   browserify({
@@ -28,13 +30,15 @@ gulp.task('script',() =>{
   .pipe(gulp.dest('public/js'));
 });
 
+
 gulp.task('sass',() =>{
   gulp.src('src/scss/main.scss')
     .pipe(sass({
-      outputStyle: 'compressed'
+      outputStyle: 'expanded'
     })).on('error', sass.logError)
     .pipe(gulp.dest('./public/css'));
 });
+
 
 gulp.task('images',() =>{
    gulp.src('src/images/*')
@@ -45,6 +49,7 @@ gulp.task('images',() =>{
     })))
     .pipe(gulp.dest('./public/images'));
 });
+
 
 gulp.task('watch',() =>{
   gulp.watch('src/**/*.js', ['script']);

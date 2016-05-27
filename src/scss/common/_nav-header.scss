@@ -1,6 +1,8 @@
 
 #nav{
+
   @extend %pad-vert;
+
 
   a{
     font-size: 1.3em;
@@ -22,21 +24,40 @@
     text-decoration: none;
   }
 
+  span{
+    font-size: 1.3em;
+  }
+
 }
 
 #banner-logo{
   width: 100%;
-  font-size: 3em;
   background: $app-blue;
-  color: white;
-  @include transition( background 0.05s );
-  @include dead-center-text(100px);
+  @include dead-center-text(60px);
   @include banner-shadow(12px, 11px, $app-shadow);
 
-  cursor: default;
-  user-select: none;
-  &::selection{
-    background-color: transparent;
+  a{
+    font-size: 3em;
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+    user-select: none;
+
+    &::selection{
+      background-color: transparent;
+    }
+
   }
 
+}
+
+
+@media only screen and (max-width: 992px){
+  #nav{
+
+    a, span{
+      font-size: 1.7em;
+    }
+
+  }
 }

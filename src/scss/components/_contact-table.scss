@@ -1,0 +1,40 @@
+
+.contact-box{
+  @include display(flex);
+  @include flex-direction(column);
+  @include align-items(center);
+}
+
+
+#contact-table{
+  font-size: 1.4em;
+  border: 1px solid #ccc;
+
+  th{
+    text-align: center;
+    font-weight: 400;
+  }
+
+  td{
+    border-left: 2px solid #ccc;
+    font-weight: 300;
+    @include transition(background 0.1s);
+
+    &:hover{
+      background: HoneyDew;
+    }
+
+    a{
+      display: block;
+      text-decoration: none;
+    }
+
+  }
+}
+
+@media only screen and (max-width: 450px){
+  #contact-table{
+    font-size: 1.3em;
+
+  }
+}

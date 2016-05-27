@@ -2,19 +2,20 @@ import React from 'react'
 
 const ListItem = (props) =>(
   <li>
-    <span className="title">
-      {props.type}
-    </span>
+    <div className="title">
+      <span className="title-text">{props.type}</span>
+    </div>
+
     {props.info.map((x, i) =>(
-      <p key={i}> - {x}</p>
+      <p key={i}>{x}</p>
     ))}
+
   </li>
 );
 
 
-
 const SkillsList = (props) =>(
-  <div id="skills-list" className="col-md-7">
+  <div id="link-list-box" className="col-md-7">
     <h2>Skills</h2>
     <ul className="nice-list">
       <ListItem
@@ -49,4 +50,4 @@ const SkillsList = (props) =>(
   </div>
 );
 
-export default SkillsList;
+export default SkillsList
