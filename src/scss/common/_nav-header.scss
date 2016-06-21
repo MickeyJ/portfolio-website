@@ -33,7 +33,7 @@
 #banner-logo{
   width: 100%;
   background: $app-blue;
-  @include dead-center-text(60px);
+  @include dead-center-text(80px);
   @include banner-shadow(12px, 11px, $app-shadow);
 
   a{

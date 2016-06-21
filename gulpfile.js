@@ -41,13 +41,13 @@ gulp.task('sass',() =>{
 
 
 gulp.task('images',() =>{
-   gulp.src('src/images/*')
+   gulp.src('src/images/**/*.*')
     .pipe((imagemin({
       optimizationLevel: 7,
       progressive: true,
       interlaced: true
     })))
-    .pipe(gulp.dest('./public/images'));
+    .pipe(gulp.dest('./public/images/'));
 });
 
 

@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import DefaultLayout from './layout'
 
-import LinkList from './components/LinkList'
+import ProjectList from './components/ProjectList'
 import SkillsList from './components/SkillsList'
 
 export default class Index extends Component{
@@ -12,8 +12,7 @@ export default class Index extends Component{
         description={this.props.description}>
 
         <div className="row-fluid">
-          <LinkList />
-          <SkillsList />
+          <ProjectList />
         </div>
 
 

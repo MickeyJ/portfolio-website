@@ -1,0 +1,14 @@
+@mixin boxes{
+
+  .img-box{
+    @include img-box(100px);
+  }
+
+}
+
+@mixin img-box($size){
+  float: left;
+  min-width: $size;
+  border: 1px solid #aaa;
+  box-sizing: border-box;
+}

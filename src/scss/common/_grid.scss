@@ -1,0 +1,34 @@
+@mixin grid{
+  .img-grid{
+    margin: 1% auto;
+
+    &:before{
+      content: '';
+      display: table;
+      clear: both;
+    }
+    &:after{
+      content: '';
+      display: table;
+      clear: both;
+    }
+
+
+  }
+}
+
+$map: ( 1600: 16, 950:12, 500:6, 380:3 );
+
+@each $break, $count in $map{
+  @media all and (max-width: $break + px){
+    @for $i from 1 through $count{
+      $equ: 96% / $i;
+      .img-grid.cell-#{$break}-#{$i}{
+        .img-box{
+          width: $equ;
+          margin: 2% / $i;
+        }
+      }
+    }
+  }
+}

@@ -20,14 +20,13 @@ export default class Layout extends Component{
 
             <NavHeader siteName={siteName}/>
             
-            <main id="main-content" className="container-fluid">
+            <main id="main-content" >
               {this.props.children}
             </main>
 
             <Footer siteName={siteName}/>
 
           </div>
-        <script src="js/script.js"></script>
         </body>
       </html>
     )

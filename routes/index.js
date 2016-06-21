@@ -10,11 +10,12 @@ router.get('/', function(req, res, next) {
   );
 });
 
-router.get('/about', function(req, res){
-  res.render('about', 
+router.get('/htm', function(req, res, next) {
+  res.render('htm',
     {
-      title: "About",
-      description: `About description`
+      title: "image",
+      description: `image page`,
+      image: req.query.image
     }
   );
 });
