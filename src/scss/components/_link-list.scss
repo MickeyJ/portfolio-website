@@ -10,9 +10,18 @@
     @extend %pad-vert;
     list-style: none;
     background: #fafafa;
+    padding: 5px;
+
+    &:first-child{
+      border-radius: 20px 20px 0 0;
+    }
 
     &:not(:last-child) {
       border-bottom: 2px solid #939393;
+    }
+
+    &:last-child{
+      border-radius: 0 0 20px 20px;
     }
 
     .github-link{

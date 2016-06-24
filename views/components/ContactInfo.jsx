@@ -2,7 +2,6 @@ import React from 'react'
 
 const ContactInfo = (props) =>(
   <div className="contact-box">
-    <h2>Contact Info</h2>
     <div className="col-md-5 col-xs-12" >
       <table id="contact-table" className="table">
         <tbody>

@@ -4,7 +4,9 @@ const NavHeader = (props) =>(
   <section>
     
     <nav id="nav" className="container-fluid">
-      <a href="/">Home</a>
+      <a href="/">Projects</a>
+      <span>|</span>
+      <a href="/me">Me</a>
       <span>|</span>
       <a href="/contact">Contact</a>
     </nav>

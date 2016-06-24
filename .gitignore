@@ -3,3 +3,5 @@ public/bower_components
 public/images
 public/css/*
 public/js/*
+src/images
+.env

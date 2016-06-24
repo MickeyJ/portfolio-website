@@ -1,26 +1,29 @@
+require('dotenv').load();
 var express = require('express');
 var router = express.Router();
 
-router.get('/', function(req, res, next) {
+const sendgrid = require('sendgrid').SendGrid(process.env.SENDGRID_API);
+
+router.get('/', (req, res, next) =>{
   res.render('index', 
     {
-      title: 'Home',
-      description: `Home description`
+      title: 'Projects',
+      description: `Projects description`
     }
   );
 });
 
-router.get('/htm', function(req, res, next) {
-  res.render('htm',
+router.get('/me', (req, res, next) =>{
+  res.render('me',
     {
-      title: "image",
-      description: `image page`,
-      image: req.query.image
+      title: "About Me",
+      description: `about me page`,
+      image: ''
     }
   );
 });
 
-router.get('/contact', function(req, res){
+router.get('/contact', (req, res)=>{
   res.render('contact', 
     {
       title: "Contact",
@@ -28,5 +31,29 @@ router.get('/contact', function(req, res){
     }
   );
 });
+
+router.post('/api/contact', (req, res)=>{
+
+  // console.log(req.body);
+  
+  const payload = {
+    to      : process.env.EMAIL,
+    from    : req.body.email,
+    subject : 'Email From Personal Website',
+    text    : `From: ${req.body.name} \n ${req.body.message}`
+  }
+
+  sendgrid.send(payload, (err, json) => {
+    console.log(payload);
+    if (err) {
+      console.error('sendgrid error in sendEmail router', err);
+      res.status(503).json({error: err, error_message: "Form fields not filled out correctly"});
+    } else {
+      console.log(json);
+      res.status(200).json(json);
+    }
+  });
+});
+
 
 module.exports = router;

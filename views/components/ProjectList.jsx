@@ -1,80 +1,14 @@
 import React from 'react'
 
-const images = (project, count) =>{
-  const imgs = [];
-  for (var i = 0; i < count; i++) {
-    imgs[i] = `/images/${project}/${i + 1}.png`;
-  }
-  return imgs;
-};
-
-const ListItem = (props) =>{
-  if(props.img){
-    if(props.demo_url){
-      return(
-        <li>
-          <div className="title">
-            <a className="github-link" href={props.github_url} target="_blank">
-              {props.title}
-            </a>
-            <span> — </span>
-            <a className="demo-link" href={props.demo_url} target="_blank">
-              Live Demo
-            </a>
-          </div>
-
-          <p>{props.info}</p>
-
-          <section className={`img-grid cell-1600-${props.img[1]} cell-950-${Math.ceil(props.img[1] / 2)} cell-500-1`}>
-            {images(props.img[0], props.img[1]).map((x, i) =>(
-              <a href={`${x}`} >
-                <img key={i} className="img-box" src={x} alt={x}/>
-              </a>
-            ))}
-          </section>
-
-        </li>
-      )
-    } else {
-      return(
-        <li>
-          <a className="github-link" href={props.github_url} target="_blank">
-            {props.title}
-          </a>
-          <p>{props.info}</p>
-          <section className={`img-grid cell-1600-${props.img[1]} cell-950-${Math.floor(props.img[1] / 2)} cell-500-2 cell-380-1`}>
-            {images(props.img[0], props.img[1]).map((x, i) =>(
-              <a href={`${x}`} >
-                <img key={i} className="img-box" src={x} alt={x}/>
-              </a>
-            ))}
-          </section>
-
-        </li>
-      )
-    }
-  } else {
-    return(
-      <li>
-        <a className="github-link" href={props.github_url} target="_blank">
-          {props.title}
-        </a>
-        <p>{props.info}</p>
-
-      </li>
-    )
-  }
-
-};
+import ListItem from './ListItem'
 
 const ProjectList = (props) =>(
   <div id="link-list-box">
-    <h2>Awesome GitHub Stuff</h2>
     <ul className="nice-list">
       <ListItem
         title="Galvanize Pre-Challenge"
         github_url="https://github.com/MickeyJ/largest-phone-number"
-        info="pre-challenge assessment for Galvanize enrollment"
+        info="pre-challenge assessment for Galvanize Full Stack."
       />
       <ListItem
         title="Personal Project"
@@ -82,6 +16,13 @@ const ProjectList = (props) =>(
         github_url="https://github.com/MickeyJ/personal-project"
         demo_url="http://personal-project.herokuapp.com"
         info="Pre-course work for Galvanize. Express, Gulp, Sass, jQuery"
+      />
+      <ListItem
+        title="React-Redux-JWT"
+        img={['q3', 5]}
+        github_url="https://github.com/MickeyJ/q3-react-starter"
+        demo_url="https://easy-speak.herokuapp.com/"
+        info="React, Redux, Webpack, Express, JWT, Postgres. Sign up or log in as Bob - Email: 'bob@mail.com' Password: 'asdf'"
       />
       <ListItem
         title="React-Redux-Webpack"
@@ -98,15 +39,8 @@ const ProjectList = (props) =>(
         info="Angular, Webpack, JWT, Express, Postgres"
       />
       <ListItem
-        title="React-Redux-JWT"
-        img={['q3', 5]}
-        github_url="https://github.com/MickeyJ/q3-react-starter"
-        demo_url="https://easy-speak.herokuapp.com/"
-        info="React, Redux, Webpack, Express, JWT, Postgres. Sign up or log in as Bob - Email: 'bob@mail.com' Password: 'asdf'"
-      />
-      <ListItem
         title="Sass & Express-React-Views"
-        img={['sass', 9]}
+        img={['sass', 8]}
         github_url="https://github.com/MickeyJ/super-sass-modules"
         demo_url="https://sass-modules.herokuapp.com/"
         info="Express-React-Views, Gulp, Sass"
@@ -123,9 +57,14 @@ const ProjectList = (props) =>(
         info="Angular, React, Gulp, Connect"
       />
       <ListItem
+        title="Spring-Thymeleaf-Starter"
+        github_url="https://github.com/MickeyJ/spring-mvc-starter"
+        info="Java Spring, Thymeleaf, Gulp, Sass"
+      />
+      <ListItem
         title="The Code for this Site"
         github_url="https://github.com/MickeyJ/portfolio-website"
-        info="Using the Express-React seed project above"
+        info="Using bits a pieces from the projects above. Hosted on AWS EC2."
       />
     </ul>
   </div>

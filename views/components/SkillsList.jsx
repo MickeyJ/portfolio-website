@@ -15,28 +15,32 @@ const ListItem = (props) =>(
 
 
 const SkillsList = (props) =>(
-  <div id="link-list-box" className="col-md-7">
+  <div>
     <h2>Skills</h2>
     <ul className="nice-list">
       <ListItem
         type="Basic Web Development"
-        info={['Html - Css', 'Javascript - jQuery']}
+        info={['Html5 - Css', 'Javascript - jQuery']}
+      />
+      <ListItem
+        type="Javascript"
+        info={['ES2015', 'OOP', 'FP']}
       />
       <ListItem
         type="Css"
-        info={['Sass', 'Bootstrap, Skeleton']}
+        info={['Sass', 'Bootstrap']}
       />
       <ListItem
         type="Node Js"
-        info={['Express, Handlebars, Ejs, Express-React-Views']}
+        info={['FS', 'Express', 'Handlebars, Ejs, Express-React-Views']}
       />
       <ListItem
         type="Frameworks - Libraries"
         info={['Angular, React']}
       />
       <ListItem
-        type="Build Tools - Task Runners"
-        info={['Gulp, Webpack']}
+        type="Task - Build Tools - Package Managers"
+        info={['Gulp, Webpack', 'Browserify', 'Babel', 'Npm', 'Bower']}
       />
       <ListItem
         type="Database"

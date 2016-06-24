@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import DefaultLayout from './layout'
 
 import ProjectList from './components/ProjectList'
-import SkillsList from './components/SkillsList'
 
 export default class Index extends Component{
   render(){
