@@ -17,7 +17,7 @@
   }
 }
 
-$map: ( 1600: 16, 950:12, 500:6, 380:3 );
+$map: ( 2700: 16, 1600: 16, 950:12, 500:6, 380:3 );
 
 @each $break, $count in $map{
   @media all and (max-width: $break + px){

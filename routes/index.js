@@ -2,7 +2,7 @@ require('dotenv').load();
 var express = require('express');
 var router = express.Router();
 
-const sendgrid = require('sendgrid').SendGrid(process.env.SENDGRID_API);
+const sendgrid = require('sendgrid')(process.env.SENDGRID_API);
 
 router.get('/', (req, res, next) =>{
   res.render('index', 
@@ -33,8 +33,6 @@ router.get('/contact', (req, res)=>{
 });
 
 router.post('/api/contact', (req, res)=>{
-
-  // console.log(req.body);
   
   const payload = {
     to      : process.env.EMAIL,
@@ -44,7 +42,6 @@ router.post('/api/contact', (req, res)=>{
   }
 
   sendgrid.send(payload, (err, json) => {
-    console.log(payload);
     if (err) {
       console.error('sendgrid error in sendEmail router', err);
       res.status(503).json({error: err, error_message: "Form fields not filled out correctly"});

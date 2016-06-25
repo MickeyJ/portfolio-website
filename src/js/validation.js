@@ -1,57 +1,32 @@
 import $ from 'jquery'
-import Valid from './person'
 
-const valid= new Valid();
-const regexEmail = /^([A-Za-z\._\-0-9])*[@]([A-Za-z\._\-0-9])*[\.]([A-Za-z]{2,4})$/;
+function clearInvalid(input, n){
+  return input.filter(x => x.id !== n)
+}
 
-
-$(function(){
-
-  const $form = $('#contact-form');
-
-  $form.on('change', function(e){
-    if(e.target.id === 'contact-name'){
-      valid.Length(e.target, e.target.value, 0)
+export default class Valid{
+  constructor(){
+    this.input = [];
+  }
+  Check(condition, target, value, n){
+    if(condition) {
+      this.input.push({id: n, value: value});
+      $(target).addClass('invalid-input')
     }
-    if(e.target.id === 'contact-email'){
-      valid.Regex(e.target, e.target.value, regexEmail, 1);
+    if(value.length < 1) {
+      this.input = clearInvalid(this.input, n);
+      $(target).removeClass('invalid-input')
     }
-    if(e.target.id === 'contact-message'){
-      valid.Length(e.target, e.target.value, 2)
-    }
-  });
-
-  $form.on('submit', function(e){
-    e.preventDefault();
-    const name = $('#contact-name').val();
-    const email = $('#contact-email').val();
-    const message = $('#contact-message').val();
-
-    console.log(valid.input.length);
-    if(!message || !email || !name){
-      console.log('empty');
-    } else if(valid.input.length >= 1){
-      console.log('invalid');
-    } else {
-      const formData = {name, email, message};
-
-      const xhr = new XMLHttpRequest();
-
-      console.dir(xhr);
-
-      $.ajax({
-        url: '/api/contact',
-        method: 'POST',
-        dataType: 'JSON',
-        data: formData
-      }).then(response =>{
-        console.log(response);
-      });
-
-      console.log('valid', formData);
+    if(!condition) {
+      this.input = clearInvalid(this.input, n);
+      $(target).removeClass('invalid-input')
     }
 
-
-  })
-
-});
+  }
+  Length(target, value, n){
+    this.Check(value.length < 2, target, value, n);
+  }
+  Regex(target, value, regex, n){
+    this.Check(regex.test(value) == false, target, value, n);
+  }
+}

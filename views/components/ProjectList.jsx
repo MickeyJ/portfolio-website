@@ -62,6 +62,11 @@ const ProjectList = (props) =>(
         info="Java Spring, Thymeleaf, Gulp, Sass"
       />
       <ListItem
+        title="Java-Todo"
+        github_url="https://github.com/MickeyJ/java-todo-app"
+        info="Java, JSON"
+      />
+      <ListItem
         title="The Code for this Site"
         github_url="https://github.com/MickeyJ/portfolio-website"
         info="Using bits a pieces from the projects above. Hosted on AWS EC2."
