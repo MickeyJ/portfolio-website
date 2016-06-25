@@ -17,7 +17,19 @@
   }
 }
 
-$map: ( 2700: 16, 1600: 16, 950:12, 500:6, 380:3 );
+$map: ( 1600: 16, 950:12, 500:6, 380:3 );
+
+@media all and (min-width: 1600px) {
+  @for $i from 1 through 16 {
+    $equ: 96% / $i;
+    .img-grid.cell-max-#{$i} {
+      .img-box {
+        width: $equ;
+        margin: 2% / $i;
+      }
+    }
+  }
+}
 
 @each $break, $count in $map{
   @media all and (max-width: $break + px){

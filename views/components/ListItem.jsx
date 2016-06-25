@@ -25,7 +25,7 @@ const ListItem = (props) =>{
 
           <p>{props.info}</p>
 
-          <section className={`img-grid cell-2700-${props.img[1]} cell-1600-${props.img[1]} cell-950-${Math.ceil(props.img[1] / 2)} cell-500-2 cell-380-1`}>
+          <section className={`img-grid cell-max-${props.img[1]} cell-1600-${props.img[1]} cell-950-${Math.ceil(props.img[1] / 2)} cell-500-2 cell-380-1`}>
             {images(props.img[0], props.img[1]).map((x, i) =>(
               <a key={i} href={`${x}`} >
                 <img className="img-box" src={x} alt={x}/>
@@ -42,7 +42,7 @@ const ListItem = (props) =>{
             {props.title}
           </a>
           <p>{props.info}</p>
-          <section className={`img-grid cell-2700-${props.img[1]} cell-1600-${props.img[1]} cell-950-${Math.floor(props.img[1] / 2)} cell-500-1 cell-380-1`}>
+          <section className={`img-grid cell-max-${props.img[1]} cell-1600-${props.img[1]} cell-950-${Math.floor(props.img[1] / 2)} cell-500-1 cell-380-1`}>
             {images(props.img[0], props.img[1]).map((x, i) =>(
               <a key={i} href={`${x}`} >
                 <img className="img-box" src={x} alt={x}/>
