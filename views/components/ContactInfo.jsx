@@ -8,8 +8,8 @@ const ContactInfo = (props) =>(
         <tr>
           <th>Email</th>
           <td>
-            <a href="mailto:develop.agility@gmail.com">
-              develop.agility@gmail.com
+            <a href="mailto:mickeyjmalotte@gmail.com">
+              mickeyjmalotte@gmail.com
             </a>
           </td>
         </tr>
@@ -34,14 +34,6 @@ const ContactInfo = (props) =>(
           <td>
             <a href="https://www.linkedin.com/in/michael-malotte" target="_blank">
               linkedin.com/in/michael-malotte
-            </a>
-          </td>
-        </tr>
-        <tr>
-          <th>Phone</th>
-          <td>
-            <a href="tel:+18057106302" >
-              805-710-6302
             </a>
           </td>
         </tr>
