@@ -8,6 +8,8 @@ var gulp       = require('gulp'),
     uglify     = require('gulp-uglify'),
     sass       = require('gulp-sass');
 
+const imageminPngquant = require('imagemin-pngquant');
+
 
 gulp.task('start',() =>{
   nodemon({
@@ -45,7 +47,10 @@ gulp.task('images',() =>{
     .pipe((imagemin({
       optimizationLevel: 7,
       progressive: true,
-      interlaced: true
+      interlaced: true,
+      plugins: [
+        imageminPngquant({quality: '65-80'})
+      ]
     })))
     .pipe(gulp.dest('./public/images/'));
 });

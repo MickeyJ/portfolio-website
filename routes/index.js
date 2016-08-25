@@ -32,14 +32,15 @@ router.get('/contact', (req, res)=>{
   );
 });
 
-router.post('/api/contact', (req, res)=>{
+
+router.post('/email/contact', (req, res)=>{
   
   const payload = {
     to      : process.env.EMAIL,
     from    : req.body.email,
     subject : 'Email From Personal Website',
     text    : `From: ${req.body.name} \n ${req.body.message}`
-  }
+  };
 
   sendgrid.send(payload, (err, json) => {
     if (err) {

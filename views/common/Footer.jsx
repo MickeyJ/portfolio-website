@@ -4,7 +4,7 @@ const Footer = (props) =>(
   <footer id="footer">
     <span>&copy; 2016</span>
     <span>{props.siteName}</span>
-    <span style={{color: 'red'}}> UNDER-CONSTRUCTION </span>
+    <span style={{color: 'red', fontSize: 14}}> UNDER-CONSTRUCTION </span>
   </footer>
 );
 

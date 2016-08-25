@@ -40,7 +40,7 @@ $(function(){
       };
       
       $.ajax({
-        url: '/api/contact',
+        url: '/email/contact',
         method: 'POST',
         dataType: 'JSON',
         data: formData
@@ -48,9 +48,6 @@ $(function(){
         window.location.pathname = "/";
       });
 
-
-
-      console.log('valid', formData);
     }
 
 

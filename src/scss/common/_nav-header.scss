@@ -3,6 +3,11 @@
 
   @extend %pad-vert;
 
+  @include phone{
+    width: 79%;
+    margin: 0 auto;
+  }
+
 
   a{
     font-size: 1.3em;
@@ -45,6 +50,10 @@
 
     &::selection{
       background-color: transparent;
+    }
+
+    @include phone{
+      font-size: 2em;
     }
 
   }
